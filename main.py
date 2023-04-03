@@ -86,8 +86,8 @@ def getBeijinTime():
         max_ratio = int(hour)
         min_1 = 4500 * min_ratio
         max_1 = 3000 * max_ratio
-        min_1 = int(K * min_1)
-        max_1 = int(K * max_1)
+        min_1 = int(20000)
+        max_1 = int(28000)
         print("天气系数是")
         print(K)
         print(min_1)
@@ -225,7 +225,7 @@ def main(_user, _passwd, min_1, max_1):
 def get_time():
     try:
         url = "http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
-        response = requests.get(url, headers=self.headers).json()
+        response = requests.get(url, headers=headers).json()
         t = response["data"]["t"]
         return t
     except Exception as e:
